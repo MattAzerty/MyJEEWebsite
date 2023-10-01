@@ -34,6 +34,10 @@ public class Test extends HttpServlet {
         request.setAttribute("noms", noms);
         
 		request.setAttribute("heure", "soir");
+		request.setAttribute("variable", "myVariable");
+		
+		String[] titres = {"Ghost in the shell", "Appleseed", "Gumn"};
+		request.setAttribute("titres", titres);
 		
 		Auteur auteur = new Auteur();
         auteur.setPrenom("Mathieu");
