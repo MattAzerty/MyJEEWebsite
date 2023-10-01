@@ -8,6 +8,8 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import com.melanoxy.beans.Auteur;
+
 /**
  * Servlet implementation class Test
  */
@@ -28,7 +30,17 @@ public class Test extends HttpServlet {
 		String name = request.getParameter("name");
         request.setAttribute("name", name);
         
+        String[] noms = {"Mathieu", "Mathilde", "A vous !"};
+        request.setAttribute("noms", noms);
+        
 		request.setAttribute("heure", "soir");
+		
+		Auteur auteur = new Auteur();
+        auteur.setPrenom("Mathieu");
+        auteur.setNom("GUILLAUD");
+        auteur.setActif(true);
+        
+        request.setAttribute("auteur", auteur);
 		
 		this.getServletContext().getRequestDispatcher("/WEB-INF/bonjour.jsp").forward(request, response);
 		

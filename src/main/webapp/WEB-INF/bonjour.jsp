@@ -6,11 +6,9 @@
 <title>Test</title>
 </head>
 <body>
-<p>Bonjour
-    <%
-    String name = (String) request.getAttribute("name");
-    out.println(name);
-    %>
-</p>
+<p>Bonjour ${ !empty name ? name : '' }</p>
+<p>${ noms[2] }</p>
+<p>Bonjour ${ auteur.prenom } ${ auteur.nom }</p>
+<p>${ auteur.actif ? 'Vous êtes très actif !' : 'Vous êtes inactif !' }</p>
 </body>
 </html>
