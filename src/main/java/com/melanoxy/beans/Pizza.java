@@ -8,8 +8,13 @@ public class Pizza {
     public String getName() {
         return name;
     }
-    public void setName(String name) {
+    public void setName(String name) throws BeanException {
+    	if (name.length() > 20) {
+            throw new BeanException("name is to big! (20 characters maximum)");
+        }
+        else {
         this.name = name;
+        }
     }
     public String getPrice() {
         return price;

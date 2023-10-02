@@ -8,6 +8,7 @@
 </head>
 <body>
  <%@ include file="menu.jsp" %>  
+ <c:if test="${ !empty error }"><p style="color:red;"><c:out value="${ error }" /></p></c:if>
     <form method="post" action="db">
         <p>
             <label for="pizzaName">Recette : </label>
