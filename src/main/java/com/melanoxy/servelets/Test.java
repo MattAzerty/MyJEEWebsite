@@ -5,6 +5,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -25,6 +27,11 @@ public class Test extends HttpServlet {
 
     //When user want to see a page
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		//Retrieve login from the current session (see form part with session saving handling)
+		HttpSession session = request.getSession();
+		String loginFromCurrentSession = (String) session.getAttribute("loginSession");
+		
 		
 		//get name user from url
 		String name = request.getParameter("name");
@@ -65,7 +72,7 @@ public class Test extends HttpServlet {
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-	//When user want to post something
+	//When user want to post something like a form
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
