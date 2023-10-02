@@ -51,14 +51,24 @@
     <servlet-name>SendFile</servlet-name>
     <servlet-class>com.melanoxy.servelets.SendFile</servlet-class>
     <multipart-config>
-            <location>C:/Users/magui/eclipse-workspace/test/fichierstmp/</location>
-            <max-file-size>10485760</max-file-size> <!-- 10 Mo -->
-            <max-request-size>52428800</max-request-size> <!-- 5 x 10 Mo (max de fichiers ici 5) -->
-            <file-size-threshold>1048576</file-size-threshold> <!-- 1 Mo (a partir de quelle taille les fichiers sont stockés sur fichiertmp -->
-        </multipart-config>
+      <location>C:/Users/magui/eclipse-workspace/test/fichierstmp/</location>
+      <max-file-size>10485760</max-file-size>
+      <max-request-size>52428800</max-request-size>
+      <file-size-threshold>1048576</file-size-threshold>
+    </multipart-config>
   </servlet>
   <servlet-mapping>
     <servlet-name>SendFile</servlet-name>
     <url-pattern>/sendfile</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Database</display-name>
+    <servlet-name>Database</servlet-name>
+    <servlet-class>com.melanoxy.servelets.Database</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Database</servlet-name>
+    <url-pattern>/db</url-pattern>
   </servlet-mapping>
 </web-app>
